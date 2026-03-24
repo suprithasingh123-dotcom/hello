@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Fitness Dashboard</h1>
+        </header>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon steps-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20V4"/></svg>
+                </div>
+                <div class="card-content">
+                    <h3>Steps</h3>
+                    <p class="value">8,245</p>
+                    <p class="subtitle text-green">+1,200 today</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon calories-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 0-4 4-4 10a4 4 0 1 0 8 0c0-6-4-10-4-10z"/><path d="M12 10a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                </div>
+                <div class="card-content">
+                    <h3>Calories</h3>
+                    <p class="value">1,450</p>
+                    <p class="subtitle text-orange">kcal burned</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon workout-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </div>
+                <div class="card-content">
+                    <h3>Workout</h3>
+                    <p class="value">45</p>
+                    <p class="subtitle text-blue">minutes active</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-header">
+                <h2>Steps Activity (Last 7 Days)</h2>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="stepsChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
