@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Gradient definition for the line
     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-    gradient.addColorStop(0, 'rgba(16, 185, 129, 0.5)'); // Emerald green semi-transparent
-    gradient.addColorStop(1, 'rgba(16, 185, 129, 0.0)'); // Transparent
+    gradient.addColorStop(0, 'rgba(255, 182, 193, 0.6)'); // Soft pink
+    gradient.addColorStop(1, 'rgba(255, 182, 193, 0.0)'); // Transparent
 
     // Sample data for the last 7 days
     const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -17,16 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
             datasets: [{
                 label: 'Steps',
                 data: data,
-                borderColor: '#10b981', // Emerald green
+                borderColor: '#ff9fb2', // Pastel pink
                 backgroundColor: gradient,
-                borderWidth: 3,
-                pointBackgroundColor: '#1e293b',
-                pointBorderColor: '#10b981',
-                pointBorderWidth: 2,
-                pointRadius: 5,
-                pointHoverRadius: 7,
+                borderWidth: 4,
+                pointBackgroundColor: '#ffffff',
+                pointBorderColor: '#ff9fb2',
+                pointBorderWidth: 3,
+                pointRadius: 6,
+                pointHoverRadius: 8,
                 fill: true,
-                tension: 0.4 // Smooth curves
+                tension: 0.5 // Extra smooth curves
             }]
         },
         options: {
@@ -37,16 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     display: false // Hide legend for cleaner look
                 },
                 tooltip: {
-                    backgroundColor: '#0f172a',
-                    titleColor: '#94a3b8',
-                    bodyColor: '#f8fafc',
-                    borderColor: 'rgba(255,255,255,0.1)',
-                    borderWidth: 1,
-                    padding: 12,
+                    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                    titleColor: '#8b8b8b',
+                    bodyColor: '#ff9fb2',
+                    titleFont: { family: "'Poppins', sans-serif", size: 13 },
+                    bodyFont: { family: "'Poppins', sans-serif", size: 14, weight: 'bold' },
+                    borderColor: '#ffe8ec',
+                    borderWidth: 2,
+                    padding: 15,
                     displayColors: false,
+                    cornerRadius: 15,
                     callbacks: {
                         label: function(context) {
-                            return context.parsed.y.toLocaleString() + ' steps';
+                            return context.parsed.y.toLocaleString() + ' steps 🐾';
                         }
                     }
                 }
@@ -58,21 +61,24 @@ document.addEventListener('DOMContentLoaded', () => {
                         drawBorder: false
                     },
                     ticks: {
-                        color: '#94a3b8',
+                        color: '#8b8b8b',
                         font: {
-                            family: "'Inter', sans-serif"
+                            family: "'Poppins', sans-serif",
+                            weight: 500
                         }
                     }
                 },
                 y: {
                     grid: {
-                        color: 'rgba(255, 255, 255, 0.05)',
-                        drawBorder: false
+                        color: 'rgba(255, 182, 193, 0.2)', // Faint pink grid
+                        drawBorder: false,
+                        borderDash: [5, 5] // Cute dashed lines
                     },
                     ticks: {
-                        color: '#94a3b8',
+                        color: '#8b8b8b',
                         font: {
-                            family: "'Inter', sans-serif"
+                            family: "'Poppins', sans-serif",
+                            weight: 500
                         },
                         stepSize: 2000,
                         callback: function(value) {
